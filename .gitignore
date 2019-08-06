@@ -1,0 +1,9 @@
+#####Visual Studio Files#####
+Harpocrates/.vs/*
+Harpocrates/Harpocrates/bin/*
+Harpocrates/Harpocrates/obj/*
+Harpocrates/Harpocrates/packages/*
+Harpocrates/Harpocrates/packages
+###Misc Files###
+*.DS_Store
+Harpocrates.sln

@@ -1,0 +1,16 @@
+{
+	"first_name": [insert_information],
+	"last_name": [insert_information],
+	"company": [insert_information],
+	"city": [insert_information],
+	"state": [insert_information],
+	"usernames": [insert_information],
+	"birthday": [insert_information],
+	"family": {
+		"father_name" : [insert_information],
+		"mother_name" : [insert_information],
+		"brother_name": [insert_information],
+		"sister_name" : [insert_informatino],
+		"children": [insert_informaiton],
+	}
+}

@@ -3,7 +3,13 @@ Harpocrates/.vs/*
 Harpocrates/Harpocrates/bin/*
 Harpocrates/Harpocrates/obj/*
 Harpocrates/Harpocrates/packages/*
-Harpocrates/Harpocrates/packages
+Harpocrates/Harpocrates/packages/
+packages/*
+packages/
+
 ###Misc Files###
 *.DS_Store
 Harpocrates.sln
+
+###Files that contain sensitive information###
+test.json

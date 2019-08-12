@@ -1,7 +1,8 @@
 ﻿using System;
 using MatthiWare.CommandLine.Core.Attributes;
 
-namespace Harpocrates.CommandLineArg
+
+namespace Harpocrates_Secrets.CommandLineArg
 {
     public class CLIArgs
     {
@@ -21,5 +22,15 @@ namespace Harpocrates.CommandLineArg
         public string JSONProfile { get; set; }
         [Name("v", "verbose"), Description("Verbose Output"), DefaultValue(true)]
         public bool Verbose { get; set; }
+
+        //Function Name: HandleJSONAttachment
+        //Function Parameters => Return Type = String => Void
+        //Function Purpose: To read in and save the user information JSON object in a dictionary
+        public static void HandleJSONAttachment(string attachment)
+        {
+
+        }
     }
+
+
 }

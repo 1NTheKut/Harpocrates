@@ -1,15 +1,15 @@
 #####Visual Studio Files#####
-Harpocrates/.vs/*
-Harpocrates/Harpocrates/bin/*
-Harpocrates/Harpocrates/obj/*
-Harpocrates/Harpocrates/packages/*
-Harpocrates/Harpocrates/packages/
+Harpocrates_Secrets/.vs/*
+Harpocrates_Secrets/Harpocrates_Secrets/bin/*
+Harpocrates_Secrets/Harpocrates_Secrets/obj/*
+Harpocrates_Secrets/Harpocrates_Secrets/packages/*
+Harpocrates_Secrets/Harpocrates_Secrets/packages/
 packages/*
 packages/
 
 ###Misc Files###
 *.DS_Store
-Harpocrates.sln
+Harpocrates_Secrets.sln
 
 ###Files that contain sensitive information###
 test.json

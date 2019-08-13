@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using System.Threading;
 using MatthiWare.CommandLine;
 using Harpocrates_Secrets.CommandLineArg;
+using Newtonsoft.Json;
 
 namespace Harpocrates_Secrets
 {
@@ -17,8 +18,9 @@ namespace Harpocrates_Secrets
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Helllo World");
+            //Console.WriteLine("Helllo World");
             //CreateWebHostBuilder(args).Build().Run();
+            ProcessComandLineArguments(args);
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
@@ -52,6 +54,29 @@ namespace Harpocrates_Secrets
                 Console.Error.WriteLine("Error in command line arguments");
                 System.Environment.Exit(1);
             }
+            ParseJson(result.Result.JSONProfile);
+            
+
+        }
+
+        static void ParseJson(dynamic json)
+        {
+            using (StreamReader jsonReader = new StreamReader(json))
+            {
+                var readInJson = jsonReader.ReadToEnd();
+                var items = JsonConvert.DeserializeObject<Dictionary<String, String>>(readInJson);
+                foreach (var keys in items.Keys)
+                {
+                    Console.WriteLine(keys + ":" + items[keys]);
+                }
+
+            }
+
+
+
+            //string jsonResponse = System.IO.File.ReadAllText(json);
+            //dynamic jsonStringToDict = JsonConvert.DeserializeObject<Dictionary<String, String>>(jsonResponse);
+            //Console.WriteLine(jsonStringToDict);
         }
 
 

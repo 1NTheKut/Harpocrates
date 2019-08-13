@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using System.Threading;
 using MatthiWare.CommandLine;
 using Harpocrates_Secrets.CommandLineArg;
+using Newtonsoft.Json;
 
 namespace Harpocrates_Secrets
 {
@@ -17,8 +18,9 @@ namespace Harpocrates_Secrets
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Helllo World");
+            //Console.WriteLine("Helllo World");
             //CreateWebHostBuilder(args).Build().Run();
+            CLIArgs.ProcessComandLineArguments(args);
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
@@ -38,22 +40,6 @@ namespace Harpocrates_Secrets
                 Thread.Sleep(75);
             }
         }
-
-        static void ProcessComandLineArguments(string[] args)
-        {
-            var options = new CommandLineParserOptions
-            {
-                AppName = "HARPOCRATES"
-            };
-            var parser = new CommandLineParser<CLIArgs>(options);
-            var result = parser.Parse(args);
-            if (result.HasErrors)
-            {
-                Console.Error.WriteLine("Error in command line arguments");
-                System.Environment.Exit(1);
-            }
-        }
-
 
     }
 

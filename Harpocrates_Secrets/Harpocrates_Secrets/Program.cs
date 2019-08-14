@@ -20,6 +20,7 @@ namespace Harpocrates_Secrets
         {
             //Console.WriteLine("Helllo World");
             //CreateWebHostBuilder(args).Build().Run();
+
             CLIArgs.ProcessComandLineArguments(args);
         }
 
@@ -40,8 +41,6 @@ namespace Harpocrates_Secrets
                 Thread.Sleep(75);
             }
         }
-
-    }
 
 
 }

@@ -20,7 +20,8 @@ namespace Harpocrates_Secrets
         {
             //Console.WriteLine("Helllo World");
             //CreateWebHostBuilder(args).Build().Run();
-            ProcessComandLineArguments(args);
+
+            CLIArgs.ProcessComandLineArguments(args);
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
@@ -40,47 +41,6 @@ namespace Harpocrates_Secrets
                 Thread.Sleep(75);
             }
         }
-
-        static void ProcessComandLineArguments(string[] args)
-        {
-            var options = new CommandLineParserOptions
-            {
-                AppName = "HARPOCRATES"
-            };
-            var parser = new CommandLineParser<CLIArgs>(options);
-            var result = parser.Parse(args);
-            if (result.HasErrors)
-            {
-                Console.Error.WriteLine("Error in command line arguments");
-                System.Environment.Exit(1);
-            }
-            ParseJson(result.Result.JSONProfile);
-            
-
-        }
-
-        static void ParseJson(dynamic json)
-        {
-            using (StreamReader jsonReader = new StreamReader(json))
-            {
-                var readInJson = jsonReader.ReadToEnd();
-                var items = JsonConvert.DeserializeObject<Dictionary<String, String>>(readInJson);
-                foreach (var keys in items.Keys)
-                {
-                    Console.WriteLine(keys + ":" + items[keys]);
-                }
-
-            }
-
-
-
-            //string jsonResponse = System.IO.File.ReadAllText(json);
-            //dynamic jsonStringToDict = JsonConvert.DeserializeObject<Dictionary<String, String>>(jsonResponse);
-            //Console.WriteLine(jsonStringToDict);
-        }
-
-
-    }
 
 
 }

@@ -20,6 +20,7 @@ namespace Harpocrates_Secrets
         {
             //Console.WriteLine("Helllo World");
             //CreateWebHostBuilder(args).Build().Run();
+            //IntroductionLine();
             CLIArgs.ProcessComandLineArguments(args);
         }
 
@@ -33,12 +34,14 @@ namespace Harpocrates_Secrets
         static void IntroductionLine()
         {
             //Because I am extra, I want the message to print letter by letter
-            string introLine = "Hello, my name is Harpocrates, the gatekeeper of secrets. What secrets would you like to uncover?";
+            string introLine = "Hello, my name is Harpocrates, the gatekeeper of secrets. Let's see what you've you got";
             for (int i = 0; i < introLine.Length; i++)
             {
                 Console.Write(introLine[i]);
                 Thread.Sleep(75);
             }
+
+            Console.WriteLine("Constructing profile from provided information");
         }
 
     }

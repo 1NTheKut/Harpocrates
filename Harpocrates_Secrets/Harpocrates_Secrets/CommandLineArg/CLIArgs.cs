@@ -11,25 +11,26 @@ namespace Harpocrates_Secrets.CommandLineArg
 {
     public class CLIArgs
     {
-        [Name("first", "first_name"), Description("First name of target")]
+        [Name("f", "first_name"), Description("First name of target")]
         public string FirstName { get; set; }
-        [Name("last", "last_name"), Description("Last name of target")]
+        [Name("l", "last_name"), Description("Last name of target")]
         public string LastName { get; set; }
-        [Name("birth_date", "birth_date"), Description("Birthday of target")]
+        [Name("b", "birth_date"), Description("Birthday of target")]
         public string Birthday { get; set; }
-        [Name("uanme", "username"), Description("Input a known username of the target")]
+        [Name("u", "username"), Description("Input a known username of the target")]
         public string Username { get; set; }
         [Name("l", "location"), Description("Where the target is from")]
         public string Location { get; set; }
         [Name("c", "company"), Description("Target's job")]
         public string Company { get; set; }
-        [Required, Name("p", "profile"), Description("If you have previously done some recon, you may attach an excel or json formatted document")]
+        [Name("p", "profile"), Description("If you have previously done some recon, you may attach an excel or json formatted document")]
         public string JSONProfile { get; set; }
         [Name("v", "verbose"), Description("Verbose Output"), DefaultValue(true)]
         public bool Verbose { get; set; }
 
        //Function name: ProcessCommandLineArguments
        //Function parameters => Return type: String[] => Void
+       //Function Purpose: To handle passed in command line arguments
         public static void ProcessComandLineArguments(string[] args)
         {
             var options = new CommandLineParserOptions
@@ -38,12 +39,17 @@ namespace Harpocrates_Secrets.CommandLineArg
             };
             var parser = new CommandLineParser<CLIArgs>(options);
             var result = parser.Parse(args);
+
             if (result.HasErrors)
             {
                 Console.Error.WriteLine("Error in command line arguments");
                 System.Environment.Exit(1);
             }
-            ParseJson(result.Result.JSONProfile);
+            if (result.Result.JSONProfile != null && args.Length > 1)
+            {
+                Console.Error.WriteLine("Too many arguments. If you are uploading a file. Only use -p command.");
+                System.Environment.Exit(2);
+            }
 
 
         }
@@ -59,7 +65,8 @@ namespace Harpocrates_Secrets.CommandLineArg
                 var items = JsonConvert.DeserializeObject<Dictionary<String, String>>(readInJson);
                 foreach (var keys in items.Keys)
                 {
-                    Console.WriteLine(keys + ":" + items[keys]);
+                    Console.WriteLine("Parsed values from provided profile:");
+                    Console.WriteLine("\t" + keys + ":" + items[keys]);
                 }
 
             }

@@ -7,9 +7,11 @@ Harpocrates_Secrets/Harpocrates_Secrets/packages/
 packages/*
 packages/
 
+
 ###Misc Files###
 *.DS_Store
 Harpocrates_Secrets.sln
 
 ###Files that contain sensitive information###
 test.json
+Keys.cs

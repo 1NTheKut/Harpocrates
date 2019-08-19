@@ -40,7 +40,6 @@ namespace Harpocrates_Secrets
                 Console.Write(introLine[i]);
                 Thread.Sleep(75);
             }
-
             Console.WriteLine("Constructing profile from provided information");
         }
 
@@ -48,5 +47,7 @@ namespace Harpocrates_Secrets
 
 
 }
+        }
 
 
+}

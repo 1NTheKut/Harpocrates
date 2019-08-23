@@ -11,6 +11,8 @@ using System.Threading;
 using MatthiWare.CommandLine;
 using Harpocrates_Secrets.CommandLineArg;
 using Newtonsoft.Json;
+using Harpocrates_Secrets.GoogleDoxing;
+
 
 namespace Harpocrates_Secrets
 {
@@ -21,7 +23,9 @@ namespace Harpocrates_Secrets
             //Console.WriteLine("Helllo World");
             //CreateWebHostBuilder(args).Build().Run();
             //IntroductionLine();
-            CLIArgs.ProcessComandLineArguments(args);
+            //CLIArgs.ProcessComandLineArguments(args);
+            GSearch.OpenWebBrowser();
+            
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>

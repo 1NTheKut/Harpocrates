@@ -10,9 +10,6 @@ using Microsoft.Extensions.Logging;
 using System.Threading;
 using MatthiWare.CommandLine;
 using Harpocrates_Secrets.CommandLineArg;
-using Newtonsoft.Json;
-using Harpocrates_Secrets.GoogleDoxing;
-
 
 namespace Harpocrates_Secrets
 {
@@ -20,12 +17,8 @@ namespace Harpocrates_Secrets
     {
         public static void Main(string[] args)
         {
-            //Console.WriteLine("Helllo World");
             //CreateWebHostBuilder(args).Build().Run();
-            //IntroductionLine();
             CLIArgs.ProcessComandLineArguments(args);
-            //GSearch.OpenWebBrowser();
-            
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
@@ -38,19 +31,21 @@ namespace Harpocrates_Secrets
         static void IntroductionLine()
         {
             //Because I am extra, I want the message to print letter by letter
-            string introLine = "Hello, my name is Harpocrates, the gatekeeper of secrets. Let's see what you've you got";
+            string introLine = "Hello, my name is Harpocrates, the gatekeeper of secrets. What secrets would you like to uncover?";
             for (int i = 0; i < introLine.Length; i++)
             {
                 Console.Write(introLine[i]);
                 Thread.Sleep(75);
             }
-
-            Console.WriteLine("Constructing profile from provided information");
         }
 
-    }
+     
+     }
 
 
-}
+ }
+
+
+
 
 

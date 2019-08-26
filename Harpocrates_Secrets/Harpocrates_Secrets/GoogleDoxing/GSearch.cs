@@ -1,7 +1,5 @@
-﻿using System;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using Harpocrates_Secrets.APIKeys;
 
 namespace Harpocrates_Secrets.GoogleDoxing
 {

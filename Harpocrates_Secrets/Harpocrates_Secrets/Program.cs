@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -37,15 +37,11 @@ namespace Harpocrates_Secrets
                 Console.Write(introLine[i]);
                 Thread.Sleep(75);
             }
+          
+            Console.WriteLine("Constructing profile from provided information");
         }
 
-     
-     }
+    }
 
 
- }
-
-
-
-
-
+}

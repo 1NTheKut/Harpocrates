@@ -20,8 +20,8 @@ namespace Harpocrates_Secrets.GoogleDoxing
 
     public class GoogleDoxingQueries
     {
-        static string doxSearch1 = "";
-        static string doxSearch2 = "";
-        static string doxSearch3 = "";
+        //static string doxSearch1 = "";
+        //static string doxSearch2 = "";
+        //static string doxSearch3 = "";
     }
 }

@@ -23,8 +23,8 @@ namespace Harpocrates_Secrets
             //Console.WriteLine("Helllo World");
             //CreateWebHostBuilder(args).Build().Run();
             //IntroductionLine();
-            //CLIArgs.ProcessComandLineArguments(args);
-            GSearch.OpenWebBrowser();
+            CLIArgs.ProcessComandLineArguments(args);
+            //GSearch.OpenWebBrowser();
             
         }
 

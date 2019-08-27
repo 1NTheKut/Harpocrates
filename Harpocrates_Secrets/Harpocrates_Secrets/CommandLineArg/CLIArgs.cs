@@ -95,6 +95,7 @@ namespace Harpocrates_Secrets.CommandLineArg
                 dict.Add("Username", result.Username);
                 dict.Add("Location", result.Location);
                 dict.Add("Company", result.Company);
+
                 return dict;
             }
     }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -17,8 +17,8 @@ namespace Harpocrates_Secrets
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Helllo World");
             //CreateWebHostBuilder(args).Build().Run();
+            CLIArgs.ProcessComandLineArguments(args);
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
@@ -37,27 +37,11 @@ namespace Harpocrates_Secrets
                 Console.Write(introLine[i]);
                 Thread.Sleep(75);
             }
+          
+            Console.WriteLine("Constructing profile from provided information");
         }
-
-        static void ProcessComandLineArguments(string[] args)
-        {
-            var options = new CommandLineParserOptions
-            {
-                AppName = "HARPOCRATES"
-            };
-            var parser = new CommandLineParser<CLIArgs>(options);
-            var result = parser.Parse(args);
-            if (result.HasErrors)
-            {
-                Console.Error.WriteLine("Error in command line arguments");
-                System.Environment.Exit(1);
-            }
-        }
-
 
     }
 
 
 }
-
-

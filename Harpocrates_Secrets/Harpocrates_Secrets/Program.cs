@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -23,7 +23,6 @@ namespace Harpocrates_Secrets
             foreach (KeyValuePair<string, string> item in parsedCommandLine)
             {
                 Console.WriteLine(item);
-
             }
 
         }
@@ -44,15 +43,11 @@ namespace Harpocrates_Secrets
                 Console.Write(introLine[i]);
                 Thread.Sleep(75);
             }
+          
+            Console.WriteLine("Constructing profile from provided information");
         }
 
-     
-     }
+    }
 
 
- }
-
-
-
-
-
+}

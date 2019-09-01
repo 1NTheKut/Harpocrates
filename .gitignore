@@ -2,10 +2,16 @@
 Harpocrates_Secrets/.vs/*
 Harpocrates_Secrets/Harpocrates_Secrets/bin/*
 Harpocrates_Secrets/Harpocrates_Secrets/obj/*
+Harpocrates_Secrets/Harpocrates_Secrets.Tests/bin/*
+Harpocrates_Secrets/Harpocrates_Secrets.Tests/obj/*
+Harpocrates_Secrets/Harpocrates_Secrets.usertasks
+Harpocrates_Secrets.Tests/.Harpocrates_Secrets.Tests.csproj.swp
+Harpocrates_Secrets.Tests/.Harpocrates_Secrets.Tests.csproj.swx
 Harpocrates_Secrets/Harpocrates_Secrets/packages/*
 Harpocrates_Secrets/Harpocrates_Secrets/packages/
 packages/*
 packages/
+
 
 
 ###Misc Files###

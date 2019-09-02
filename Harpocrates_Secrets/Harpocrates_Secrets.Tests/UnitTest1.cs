@@ -23,7 +23,7 @@ namespace Harpocrates_Secrets.Tests
         {
             string testFile = "/Users/roottoor/Desktop/Programming-Projects/FindYourExposure/Harpocrates/test.json";
             var parsedResult = CommandLineArg.CLIArgs.ParseJson(testFile);
-            Assert.That(parsedResult, Is.InstanceOf<Dictionary<string,string>>());
+            Assert.That(parsedResult, Is.InstanceOf<Dictionary<string, string>>());
 
         }
 
@@ -47,8 +47,20 @@ namespace Harpocrates_Secrets.Tests
         [TestCase]
         public void HandleJSONTest_WhenJSONNotSubmitted()
         {
+            bool submittedJSON = false;
+            var testDictionary = new Dictionary<string, string>();
+            var parser = new CommandLineParser<CommandLineArg.CLIArgs>();
+            var testArgs = new string[] { "f", "Spencer" };
+            var result = parser.Parse(testArgs);
+            result.Result.FirstName = "Spencer";
+            result.Result.LastName = "Pearlman";
+            result.Result.Username = "spencer";
+            result.Result.Location = "The Wall";
+            result.Result.Company = "Night's Watch";
 
+            var rezResult = CommandLineArg.CLIArgs.HandleJSON(submittedJSON, result.Result, testDictionary);
+
+            Assert.That(rezResult, Is.InstanceOf<Dictionary<string, string>>());
         }
-
     }
 }

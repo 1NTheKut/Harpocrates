@@ -17,8 +17,14 @@ namespace Harpocrates_Secrets
     {
         public static void Main(string[] args)
         {
-            //CreateWebHostBuilder(args).Build().Run();
-            CLIArgs.ProcessComandLineArguments(args);
+
+            var parsedCommandLine = CLIArgs.ProcessComandLineArguments(args).Where(kvp => kvp.Value != null);
+            Console.WriteLine("Below is the following information you have provided.");
+            foreach (KeyValuePair<string, string> item in parsedCommandLine)
+            {
+                Console.WriteLine(item);
+            }
+
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>

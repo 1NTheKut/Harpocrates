@@ -89,14 +89,16 @@ namespace Harpocrates_Secrets.CommandLineArg
                 {
                     var prof = ParseJson(result.JSONProfile);
                     return prof;
-                }           
+                }
+
                 dict.Add("First Name", result.FirstName);
                 dict.Add("Last Name", result.LastName);
                 dict.Add("Username", result.Username);
                 dict.Add("Location", result.Location);
                 dict.Add("Company", result.Company);
 
-                return dict;
+            return dict;
+
             }
     }
 

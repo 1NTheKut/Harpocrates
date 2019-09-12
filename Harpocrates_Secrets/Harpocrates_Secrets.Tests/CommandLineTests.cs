@@ -62,5 +62,13 @@ namespace Harpocrates_Secrets.Tests
 
             Assert.That(rezResult, Is.InstanceOf<Dictionary<string, string>>());
         }
+
+        [TestCase]
+        public void ProcessCommandLineArguments_Test()
+        {
+            var argStrings = new string[] { "-f", "Spencer", "-l", "Pearlman" };
+            var rezResult = CommandLineArg.CLIArgs.ProcessComandLineArguments(argStrings);
+            Assert.That(rezResult, Is.InstanceOf<Dictionary<string, string>>());
+        }
     }
 }

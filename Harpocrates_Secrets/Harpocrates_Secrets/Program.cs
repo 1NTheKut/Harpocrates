@@ -19,7 +19,8 @@ namespace Harpocrates_Secrets
         {
 
             var parsedCommandLine = CLIArgs.ProcessComandLineArguments(args).Where(kvp => kvp.Value != null);
-            Console.WriteLine("Below is the following information you have provided.");
+            Console.WriteLine("Below is the following information you have provided.\n\nNOTE: If some of the vaues you have " +
+                "inputted are not shown below you may have included a non-existent parameter.");
             foreach (KeyValuePair<string, string> item in parsedCommandLine)
             {
                 Console.WriteLine(item);

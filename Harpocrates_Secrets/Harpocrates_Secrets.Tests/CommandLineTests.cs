@@ -70,13 +70,5 @@ namespace Harpocrates_Secrets.Tests
             var rezResult = CommandLineArg.CLIArgs.ProcessComandLineArguments(argStrings);
             Assert.That(rezResult, Is.InstanceOf<Dictionary<string, string>>());
         }
-
-        [TestCase]
-        public void ProcessCommandLineArguments_PassingInWrongArguments_Test()
-        {
-            var argStrings = new string[] { "-x", "Spencer", "-d", "Pearlman" };
-            var rezResult = CommandLineArg.CLIArgs.ProcessComandLineArguments(argStrings);
-            Assert.That(rezResult, Is.Not.InstanceOf<Dictionary<string, string>>());
-        }
     }
 }

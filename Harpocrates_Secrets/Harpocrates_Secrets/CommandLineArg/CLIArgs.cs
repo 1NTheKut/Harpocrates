@@ -38,17 +38,20 @@ namespace Harpocrates_Secrets.CommandLineArg
 
             var options = new CommandLineParserOptions
             {
-                AppName = "HARPOCRATES"
+                AppName = "HARPOCRATES",
+                AutoPrintUsageAndErrors = true
+                
             };
             var parser = new CommandLineParser<CLIArgs>(options);
+            
             var result = parser.Parse(args);
-
+            
             if (result.HasErrors)
             {
                 Console.Error.WriteLine("Error in command line arguments");
                 System.Environment.Exit(1);
             }
-            else if (result.Result.JSONProfile != null)
+            if (result.Result.JSONProfile != null)
             {
                 submittedJSON = true;
                 if (args.Length > 2)

@@ -1,5 +1,5 @@
 # Harpocrates
-Harpocrates is the Greek god of silence and secrets. What secrets can Google find? This will attempt to be an all-in-one OSINT gathering tool.
+Harpocrates is the Greek god of silence and secrets. Using OSINT to find private (but public) info on people.
 
 <h3> Usage </h3>
 <h5> Usage: `dotnet run -- [OPTIONS]` </h5>
